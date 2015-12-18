@@ -83,12 +83,7 @@ class Rational < Numeric
   end
 
   def ceil(precision = 0)
-    raise NotImprementedError
-    if precision == 0
-      to_f.ceil # -> Integer
-    else
-      to_f.ceil(precision) # -> Float | Integer | Rational
-    end
+    to_f.ceil(precision)
   end
 
   def coerce(other)
@@ -172,6 +167,7 @@ class Rational < Numeric
     if !numer.is_a?(Fixnum) && !numer.is_a?(Float)
       raise NotImprementedError, "Not support initialize by String yet"
     end
+    raise TypeError unless denom.is_a?(Fixnum)
     @num = numer
     @den = denom
     if @den < 0
