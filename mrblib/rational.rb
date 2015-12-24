@@ -1,6 +1,8 @@
 ##
 # Kernel.#Rational
+#
 # http://docs.ruby-lang.org/ja/1.9.3/method/Kernel/b/Rational.html
+#
 def Rational(numer, denom = 1)
   Rational.send :convert, numer, denom
 end
@@ -10,8 +12,6 @@ end
 #
 # http://docs.ruby-lang.org/ja/1.9.3/class/Rational.html
 #
-# - ISO has no definiton for Rational?
-# - http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=59579
 class Rational < Numeric
 
   def *(other)
