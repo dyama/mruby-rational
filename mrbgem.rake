@@ -3,5 +3,6 @@ MRuby::Gem::Specification.new('mruby-rational') do |spec|
   spec.author  = 'dyama'
   spec.summary = 'Rational class'
 
+  spec.add_dependency('mruby-metaprog')
   spec.add_test_dependency('mruby-enum-ext')
 end
