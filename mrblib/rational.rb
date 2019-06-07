@@ -4,7 +4,7 @@
 # http://docs.ruby-lang.org/ja/1.9.3/method/Kernel/b/Rational.html
 #
 def Rational(numer, denom = 1)
-  Rational.send :convert, numer, denom
+  Rational.__send__ :convert, numer, denom
 end
 
 ##
@@ -75,6 +75,22 @@ class Rational < Numeric
     else
       nil
     end
+  end
+
+  def <(other)
+    (self <=> other) == -1
+  end
+
+  def <=(other)
+    (self <=> other) <= 0
+  end
+
+  def >(other)
+    (self <=> other) == 1
+  end
+
+  def >=(other)
+    (self <=> other) >= 0
   end
 
   def ==(other)
