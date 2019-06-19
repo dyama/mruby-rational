@@ -60,6 +60,38 @@ assert('Rational#<=>') do
   assert_nil(Rational(1, 3) <=> nil)
 end
 
+# < method
+assert('Rational#<') do
+  assert_true(Rational(1, 1) < Rational(2, 1))
+  assert_false(Rational(2, 1) < Rational(1, 1))
+  assert_false(Rational(1, 1) < Rational(1, 1))
+  assert_true(Rational(1, 1) < 2)
+end
+
+# <= method
+assert('Rational#<=') do
+  assert_true(Rational(1, 1) <= Rational(2, 1))
+  assert_true(Rational(1, 1) <= Rational(1, 1))
+  assert_true(Rational(1, 1) <= 1)
+  assert_false(Rational(1, 1) <= Rational(1, 2))
+end
+
+# > method
+assert('Rational#>') do
+  assert_true(Rational(2, 1) > Rational(1, 1))
+  assert_false(Rational(1, 1) > Rational(2, 1))
+  assert_false(Rational(1, 1) > Rational(1, 1))
+  assert_true(Rational(2, 1) > 1)
+end
+
+# >= method
+assert('Rational#>=') do
+  assert_true(Rational(2, 1) >= Rational(1, 1))
+  assert_true(Rational(1, 1) >= Rational(1, 1))
+  assert_false(Rational(1, 1) >= Rational(2, 1))
+  assert_true(Rational(2, 1) >= 1)
+end
+
 # == method
 assert('Rational#==') do
   assert_true(Rational(2, 3) == Rational(2, 3))
